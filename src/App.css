@@ -1,0 +1,213 @@
+*{
+    --RadialGradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
+    --HeaderOutline: hsl(217, 16%, 45%);
+    --ScoreText: hsl(229, 64%, 46%);
+    --DarkText: hsl(229, 25%, 31%);
+
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color:rgb(255, 255, 255);
+    width: 1366px;
+    min-height: 1000px;
+    background:radial-gradient(at top, hsl(214, 47%, 23%),hsl(237, 49%, 15%)) ;
+    position: relative;
+}
+
+.app-bar{
+    border: 3px solid var(--HeaderOutline);
+    border-radius: 25px;
+    padding: 22px 27px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 650px;
+}
+
+.score-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    width: 150px;
+    height: auto;
+    color:var(--ScoreText)
+}
+
+.score-title{
+    font-family: "Barlow Semi Condensed", sans-serif;
+    letter-spacing: .2em;
+    font-weight: 700;
+    margin-top: 20px;
+    font-size: 17px;
+}
+.score{
+    font-family: "Barlow Semi Condensed", sans-serif;
+    color: var(--DarkText);
+    font-weight: 700;
+    font-size: 73px;
+    margin-bottom: 10px;
+}
+
+.sign-frame{
+    width: 110px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 90px;
+    position: absolute;
+    z-index: 10;
+
+}
+
+.game-board{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    width:400px;
+    height:400px;
+    margin-top: 120px;
+    position: relative;
+}
+
+.game-board >img{
+    width:400px;
+    z-index: 0;
+}
+
+.rules-button{
+    border: 3px solid white;
+    background-color: transparent;
+    color:white;
+    font-weight: 700;
+    padding: 10px 30px;
+    border-radius: 10px;
+    position: absolute;
+    transform: translateX(400px) translateY(800px);
+}
+
+.rules{
+    background-color: white;
+    color:var(--DarkText);
+    border-radius: 10px;
+    padding:10px 30px 20px 30px;
+    position: absolute;
+    transform: translatey(200px);
+    z-index: 10;
+}
+
+.exit-button{
+    background-color: transparent;
+    border:none;
+}
+
+.ins-top-cont{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.dark-layer{
+    width: 100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 8;
+    
+}
+.match-titles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 700px;
+    font-size: 25px;
+    margin-top: 100px;
+    letter-spacing: 0.1rem;
+}
+
+.pc-placeholder{
+    background-color: rgba(0, 0, 0, 0.164);
+    width: 200px;
+    height:200px;
+    border:none;
+    border-radius: 200px;
+    transform: translateY(120px) translateX(260px);
+    position:absolute;
+}
+
+.match{
+    position: relative;
+}
+
+.match-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+}
+
+.result-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+
+}
+
+.result-h1{
+    font-size: 60px;
+    z-index: 10;
+
+}
+
+.result-button{
+    background-color: white;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    border:none;
+    border-radius: 10px;
+    padding: 15px 70px;
+    color:var(--DarkText);
+    z-index: 10;
+}
+
+.ring-1{
+    background-color: rgba(255, 255, 255, 0.09);
+    width: 400px;
+    height: 400px;
+    border-radius: 400px;
+    position: absolute;
+    z-index: 7;
+}
+.ring-2{
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 600px;
+    height: 600px;
+    border-radius: 600px;
+    position: absolute;
+    z-index: 8;
+
+}
+.ring-3{
+    background-color: rgba(255, 255, 255, 0.01);
+    width: 800px;
+    height: 800px;
+    border-radius: 800px;
+    position: absolute;
+    z-index: 9;
+
+}
+
