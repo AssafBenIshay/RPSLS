@@ -58,17 +58,17 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     function plop() {
         if (pcSign.svg === selectedSign) {
             setIsIWinner('ITS A TIE!')
-        } else if((pcSign.svg.includes('scissor') && selectedSign.includes('paper'))
-            || (pcSign.svg.includes('scissor') && selectedSign.includes('lizard'))
-            || (pcSign.svg.includes('paper') && selectedSign.includes('rock'))
-            || (pcSign.svg.includes('paper') && selectedSign.includes('spock'))
-            || (pcSign.svg.includes('rock') && selectedSign.includes('lizard'))
-            || (pcSign.svg.includes('rock') && selectedSign.includes('scissor'))
-            || (pcSign.svg.includes('lizard') && selectedSign.includes('spock'))
-            || (pcSign.svg.includes('lizard') && selectedSign.includes('paper'))
-            || (pcSign.svg.includes('spock') && selectedSign.includes('scissor'))
-            || (pcSign.svg.includes('spock') && selectedSign.includes('rock'))
-        ) {
+        } else if ((pcSign.svg.includes('scissor') && selectedSign.includes('paper')) === true
+            || (pcSign.svg.includes('scissor') && selectedSign.includes('lizard')) === true
+            || (pcSign.svg.includes('paper') && selectedSign.includes('rock'))===true
+            || (pcSign.svg.includes('paper') && selectedSign.includes('spock'))===true
+            || (pcSign.svg.includes('rock') && selectedSign.includes('lizard'))===true
+            || (pcSign.svg.includes('rock') && selectedSign.includes('scissor'))===true
+            || (pcSign.svg.includes('lizard') && selectedSign.includes('spock'))===true
+            || (pcSign.svg.includes('lizard') && selectedSign.includes('paper'))===true
+            || (pcSign.svg.includes('spock') && selectedSign.includes('scissor'))===true
+            || (pcSign.svg.includes('spock') && selectedSign.includes('rock'))===true) 
+        {
 
             setIsIWinner('YOU LOSE')
             setScore(last => last - 1)
