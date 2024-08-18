@@ -41,9 +41,10 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     }, [selectedSign])
     
     React.useEffect(() => {
+        const first = () => checkWhoWon()
         try {
             if (pcSign.svg) {
-                 plop()
+                first()
             }
            
         } catch (error) {
@@ -51,7 +52,7 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
         }
     },[turnEnded])
     
-    function plop() {
+    function checkWhoWon() {
         if (pcSign.svg === selectedSign) {
             setIsIWinner('ITS A TIE!')
             return
@@ -138,7 +139,7 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     return (
         <div className='match'>
             <div className='match-titles'>
-                <p>{typeof(pcSign.svg.includes('scissor')) }</p>
+                <p>{typeof(pcSign.svg) }</p>
                 <p>THE HOUSE PICKED</p> 
             </div>
             <div className='match-area'>
