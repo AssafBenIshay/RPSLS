@@ -27,7 +27,6 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     
     React.useEffect(() => {
         setTimeout(() => {
-            
             setPcTurn(!pcTurn)
 
         }, 1000);
@@ -38,17 +37,21 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
             setTurnEnded(!turnEnded)
 
         }, 2000);
+    }, [pcTurn])
+    
+    // React.useEffect(() => {
+    //     const first = () => checkWhoWon()
+    //     try {
+    //             first()
+    //     } catch (error) {
+    //         console.log('error', error)
+    //     }
 
-    }, [selectedSign])
+    // }, [turnEnded])
     
     React.useEffect(() => {
         const first = () => checkWhoWon()
-        try {
-                first()
-        } catch (error) {
-            console.log('error', error)
-        }
-    },[turnEnded])
+
     
     function checkWhoWon() {
         if (pcSign.svg) {
@@ -124,7 +127,11 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
             }
         }
         
-    }    
+        }
+        first()
+        
+},[turnEnded])
+
 
     return (
         <div className='match'>
