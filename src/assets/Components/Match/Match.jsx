@@ -138,7 +138,7 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     return (
         <div className='match'>
             <div className='match-titles'>
-                <p>YOU PICKED</p>
+                <p>{typeof(pcSign.svg.includes('scissor')) }</p>
                 <p>THE HOUSE PICKED</p> 
             </div>
             <div className='match-area'>
