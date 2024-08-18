@@ -43,7 +43,7 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     React.useEffect(() => {
         setTimeout(() => {
             setTurnEnded(!turnEnded)
-        }, 300000);
+        }, 3000);
 
         try {
             if (pcSign.svg) {
