@@ -19,14 +19,15 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
                 setOnBoardSign(signs5[i])
             }
         }
+        setPcSign(advancedGame
+            ? signs5[Math.floor(Math.random() * 5)]
+        :signs3[Math.floor(Math.random() * 3)])
     
     }, [selectedSign])
     
     React.useEffect(() => {
         setTimeout(() => {
-            setPcSign(advancedGame
-                ? signs5[Math.floor(Math.random() * 5)]
-            :signs3[Math.floor(Math.random() * 3)])
+            
             setPcTurn(!pcTurn)
 
         }, 1000);
@@ -43,95 +44,84 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     React.useEffect(() => {
         const first = () => checkWhoWon()
         try {
-            if (pcSign.svg) {
                 first()
-            }
-           
         } catch (error) {
             console.log('error', error)
         }
     },[turnEnded])
     
     function checkWhoWon() {
-        if (pcSign.svg === selectedSign) {
-            setIsIWinner('ITS A TIE!')
-            return
-        } else if ((pcSign.svg.includes('scissor') && selectedSign.includes('paper')))         {
-            setIsIWinner('YOU LOSE')
-            setScore(last => last - 1)
-            setWinRing(true)
-            setWinner('pc')
-            return
-        }
-        else if (pcSign.svg.includes('scissor') && selectedSign.includes('lizard')) {
-            setIsIWinner('YOU LOSE')
-            setScore(last => last - 1)
-            setWinRing(true)
-            setWinner('pc')
-            return
-        }
-             else if(pcSign.svg.includes('paper') && selectedSign.includes('rock')){
+        if (pcSign.svg) {
+            if (pcSign.svg === selectedSign) {
+                setIsIWinner('ITS A TIE!')
+                return
+            } else if ((pcSign.svg.includes('scissor') && selectedSign.includes('paper'))) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }
-             else if(pcSign.svg.includes('paper') && selectedSign.includes('spock')){
+            }            else if (pcSign.svg.includes('scissor') && selectedSign.includes('lizard')) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }
-             else if(pcSign.svg.includes('rock') && selectedSign.includes('lizard')){
+            }            else if (pcSign.svg.includes('paper') && selectedSign.includes('rock')) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }
-             else if(pcSign.svg.includes('rock') && selectedSign.includes('scissor')){
+            }            else if (pcSign.svg.includes('paper') && selectedSign.includes('spock')) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }
-             else if(pcSign.svg.includes('lizard') && selectedSign.includes('spock')){
+            }            else if (pcSign.svg.includes('rock') && selectedSign.includes('lizard')) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }
-             else if(pcSign.svg.includes('lizard') && selectedSign.includes('paper')){
+            }            else if (pcSign.svg.includes('rock') && selectedSign.includes('scissor')) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }
-             else if(pcSign.svg.includes('spock') && selectedSign.includes('scissor')){
+            }            else if (pcSign.svg.includes('lizard') && selectedSign.includes('spock')) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }
-             else if(pcSign.svg.includes('spock') && selectedSign.includes('rock')){
+            }            else if (pcSign.svg.includes('lizard') && selectedSign.includes('paper')) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
+            }            else if (pcSign.svg.includes('spock') && selectedSign.includes('scissor')) {
+                setIsIWinner('YOU LOSE')
+                setScore(last => last - 1)
+                setWinRing(true)
+                setWinner('pc')
+                return
+            }            else if (pcSign.svg.includes('spock') && selectedSign.includes('rock')) {
+                setIsIWinner('YOU LOSE')
+                setScore(last => last - 1)
+                setWinRing(true)
+                setWinner('pc')
+                return
+            }            else {
+                setIsIWinner('YOU WIN')
+                setScore(last => last + 1)
+                setWinRing(true)
+                setWinner('you')
+                return
             }
-        else {
-            setIsIWinner('YOU WIN')
-            setScore(last => last + 1)
-            setWinRing(true)
-            setWinner('you')
-            return
         }
         
     }    
@@ -139,7 +129,7 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     return (
         <div className='match'>
             <div className='match-titles'>
-                <p>{typeof(pcSign.svg) }</p>
+                <p>YOR HAND</p>
                 <p>THE HOUSE PICKED</p> 
             </div>
             <div className='match-area'>
