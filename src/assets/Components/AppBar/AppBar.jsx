@@ -19,7 +19,7 @@ export default function AppBar({ advancedGame, setAdvancedGame, setBoardType ,sc
                 <img src={advancedGame?bonusLogo:Logo} alt='Rock Paper Scissors'/>
             </div>
             <div className='score-container'>
-                <div className='score-title'> SPORE</div>
+                <div className='score-title'> SNORE</div>
                 <div className='score'>{score }</div>
             </div>
         </div>
