@@ -56,80 +56,82 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
         const first = () => checkWhoWon()
 
     
-    function checkWhoWon() {
-            if (pcSign.sign === selectedSign) {
-                setIsIWinner('ITS A TIE!')
-                setWinRing(false)
-                return
-            } else if ((pcSign.sign === (3) && selectedSign === (2))) {
-                setIsIWinner('YOU LOSE')
-                setScore(last => last - 1)
-                setWinRing(true)
-                setWinner('pc')
-                return
-            }            else if (pcSign.sign === (3) && selectedSign === (4)) {
-                setIsIWinner('YOU LOSE')
-                setScore(last => last - 1)
-                setWinRing(true)
-                setWinner('pc')
-                return
-            }            else if (pcSign.sign === (2) && selectedSign === (1)) {
-                setIsIWinner('YOU LOSE')
-                setScore(last => last - 1)
-                setWinRing(true)
-                setWinner('pc')
-                return
-            }            else if (pcSign.sign === (2) && selectedSign === (5)) {
-                setIsIWinner('YOU LOSE')
-                setScore(last => last - 1)
-                setWinRing(true)
-                setWinner('pc')
-                return
-            }            else if (pcSign.sign === (1) && selectedSign === (4)) {
-                setIsIWinner('YOU LOSE')
-                setScore(last => last - 1)
-                setWinRing(true)
-                setWinner('pc')
-                return
-            }            else if (pcSign.sign === (1) && selectedSign === (3)) {
-                setIsIWinner('YOU LOSE')
-                setScore(last => last - 1)
-                setWinRing(true)
-                setWinner('pc')
-                return
-            }            else if (pcSign.sign === (4) && selectedSign === (5)) {
-                setIsIWinner('YOU LOSE')
-                setScore(last => last - 1)
-                setWinRing(true)
-                setWinner('pc')
-                return
-            }            else if (pcSign.sign === (4) && selectedSign === (2)) {
-                setIsIWinner('YOU LOSE')
-                setScore(last => last - 1)
-                setWinRing(true)
-                setWinner('pc')
-                return
-            }            else if (pcSign.sign === (5) && selectedSign === (3)) {
-                setIsIWinner('YOU LOSE')
-                setScore(last => last - 1)
-                setWinRing(true)
-                setWinner('pc')
-                return
-            }            else if (pcSign.sign === (5) && selectedSign === (1)) {
-                setIsIWinner('YOU LOSE')
-                setScore(last => last - 1)
-                setWinRing(true)
-                setWinner('pc')
-                return
-            }            else {
-                setIsIWinner('YOU WIN')
-                setScore(last => last + 1)
-                setWinRing(true)
-                setWinner('you')
-                return
+        function checkWhoWon() {
+            if (pcSign.svg) {
+                if (pcSign.sign === selectedSign) {
+                    setIsIWinner('ITS A TIE!')
+                    setWinRing(false)
+                    return
+                } else if ((pcSign.sign === (3) && selectedSign === (2))) {
+                    setIsIWinner('YOU LOSE')
+                    setScore(last => last - 1)
+                    setWinRing(true)
+                    setWinner('pc')
+                    return
+                } else if (pcSign.sign === (3) && selectedSign === (4)) {
+                    setIsIWinner('YOU LOSE')
+                    setScore(last => last - 1)
+                    setWinRing(true)
+                    setWinner('pc')
+                    return
+                } else if (pcSign.sign === (2) && selectedSign === (1)) {
+                    setIsIWinner('YOU LOSE')
+                    setScore(last => last - 1)
+                    setWinRing(true)
+                    setWinner('pc')
+                    return
+                } else if (pcSign.sign === (2) && selectedSign === (5)) {
+                    setIsIWinner('YOU LOSE')
+                    setScore(last => last - 1)
+                    setWinRing(true)
+                    setWinner('pc')
+                    return
+                } else if (pcSign.sign === (1) && selectedSign === (4)) {
+                    setIsIWinner('YOU LOSE')
+                    setScore(last => last - 1)
+                    setWinRing(true)
+                    setWinner('pc')
+                    return
+                } else if (pcSign.sign === (1) && selectedSign === (3)) {
+                    setIsIWinner('YOU LOSE')
+                    setScore(last => last - 1)
+                    setWinRing(true)
+                    setWinner('pc')
+                    return
+                } else if (pcSign.sign === (4) && selectedSign === (5)) {
+                    setIsIWinner('YOU LOSE')
+                    setScore(last => last - 1)
+                    setWinRing(true)
+                    setWinner('pc')
+                    return
+                } else if (pcSign.sign === (4) && selectedSign === (2)) {
+                    setIsIWinner('YOU LOSE')
+                    setScore(last => last - 1)
+                    setWinRing(true)
+                    setWinner('pc')
+                    return
+                } else if (pcSign.sign === (5) && selectedSign === (3)) {
+                    setIsIWinner('YOU LOSE')
+                    setScore(last => last - 1)
+                    setWinRing(true)
+                    setWinner('pc')
+                    return
+                } else if (pcSign.sign === (5) && selectedSign === (1)) {
+                    setIsIWinner('YOU LOSE')
+                    setScore(last => last - 1)
+                    setWinRing(true)
+                    setWinner('pc')
+                    return
+                } else {
+                    setIsIWinner('YOU WIN')
+                    setScore(last => last + 1)
+                    setWinRing(true)
+                    setWinner('you')
+                    return
+                }
+        
+        
             }
-        
-        
         }
         first()
         
