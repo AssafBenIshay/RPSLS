@@ -1,4 +1,4 @@
-export default function Sign({ frameColor, shadowColor, svg, posX, posY, scale,isMatch,setIsMatch ,setSelectedSign}) {
+export default function Sign({ frameColor, shadowColor, svg, posX, posY, scale,sign,isMatch,setIsMatch ,setSelectedSign}) {
     
     
 
@@ -10,7 +10,7 @@ export default function Sign({ frameColor, shadowColor, svg, posX, posY, scale,i
             transform: `translateX(${posX}%) translateY(${posY}%)`
         }} onClick={() => {
             setIsMatch(!isMatch)
-            setSelectedSign(svg)
+            setSelectedSign(sign)
         }}>
             <div className='svg'>
                 <img src={svg} alt={svg} />

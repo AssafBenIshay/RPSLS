@@ -45,6 +45,8 @@ function App() {
         isMatch={isMatch}
         setIsMatch={setIsMatch}
         setSelectedSign={setSelectedSign}
+        setWinRing={setWinRing}
+
       />}
       {isMatch && <Match
         signsArray={signsArray}

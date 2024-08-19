@@ -14,15 +14,18 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     const [isIWinner,setIsIWinner] = React.useState('')
 
     React.useEffect(() => {
+        setWinRing(false)
+
+    },[onBoardSign])
+    React.useEffect(() => {
         for (let i = 0; i < 5; i++){
-            if (signs5[i].svg === selectedSign) {
+            if (signs5[i].sign === selectedSign) {
                 setOnBoardSign(signs5[i])
             }
         }
         setPcSign(advancedGame
             ? signs5[Math.floor(Math.random() * 5)]
         :signs3[Math.floor(Math.random() * 3)])
-    
     }, [selectedSign])
     
     React.useEffect(() => {
@@ -35,7 +38,6 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     React.useEffect(() => {
         setTimeout(() => {
             setTurnEnded(!turnEnded)
-
         }, 2000);
     }, [pcTurn])
     
@@ -48,71 +50,72 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     //     }
 
     // }, [turnEnded])
+
     
     React.useEffect(() => {
         const first = () => checkWhoWon()
 
     
     function checkWhoWon() {
-        if (pcSign.svg) {
-            if (pcSign.svg === selectedSign) {
+            if (pcSign.sign === selectedSign) {
                 setIsIWinner('ITS A TIE!')
+                setWinRing(false)
                 return
-            } else if ((pcSign.svg.includes('scissor') && selectedSign.includes('paper'))) {
+            } else if ((pcSign.sign === (3) && selectedSign === (2))) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }            else if (pcSign.svg.includes('scissor') && selectedSign.includes('lizard')) {
+            }            else if (pcSign.sign === (3) && selectedSign === (4)) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }            else if (pcSign.svg.includes('paper') && selectedSign.includes('rock')) {
+            }            else if (pcSign.sign === (2) && selectedSign === (1)) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }            else if (pcSign.svg.includes('paper') && selectedSign.includes('spock')) {
+            }            else if (pcSign.sign === (2) && selectedSign === (5)) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }            else if (pcSign.svg.includes('rock') && selectedSign.includes('lizard')) {
+            }            else if (pcSign.sign === (1) && selectedSign === (4)) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }            else if (pcSign.svg.includes('rock') && selectedSign.includes('scissor')) {
+            }            else if (pcSign.sign === (1) && selectedSign === (3)) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }            else if (pcSign.svg.includes('lizard') && selectedSign.includes('spock')) {
+            }            else if (pcSign.sign === (4) && selectedSign === (5)) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }            else if (pcSign.svg.includes('lizard') && selectedSign.includes('paper')) {
+            }            else if (pcSign.sign === (4) && selectedSign === (2)) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }            else if (pcSign.svg.includes('spock') && selectedSign.includes('scissor')) {
+            }            else if (pcSign.sign === (5) && selectedSign === (3)) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
                 setWinner('pc')
                 return
-            }            else if (pcSign.svg.includes('spock') && selectedSign.includes('rock')) {
+            }            else if (pcSign.sign === (5) && selectedSign === (1)) {
                 setIsIWinner('YOU LOSE')
                 setScore(last => last - 1)
                 setWinRing(true)
@@ -125,7 +128,7 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
                 setWinner('you')
                 return
             }
-        }
+        
         
         }
         first()
@@ -177,8 +180,6 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
                                 key={crypto.randomUUID()}
                             />
                 }
-                
-
             </div>
         </div>
     )

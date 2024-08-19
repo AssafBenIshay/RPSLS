@@ -11,7 +11,8 @@ export const signs5 = [
     'shadowColor': 'hsl(349, 76%, 52%)',
     'posX': '85',
     'posY': '120',
-    'scale':'1'
+    'scale': '1',
+    'sign': 1
   },
   {
     'svg': Paper,
@@ -19,7 +20,8 @@ export const signs5 = [
     'shadowColor': 'hsl(230, 99%, 62%)',
     'posX': '120',
     'posY':'-30',
-    'scale':'1'
+    'scale':'1',
+    'sign': 2
 
   },{
     'svg': Scissor,
@@ -27,21 +29,24 @@ export const signs5 = [
     'shadowColor':'hsl(39, 94%, 39%)',
     'posX': '0',
     'posY':'-130',
-    'scale':'1'
+    'scale':'1',
+    'sign': 3
   },{
     'svg': Lizard,
     'frameColor': 'hsl(261, 72%, 63%)',
     'shadowColor':'hsl(261, 73%, 60%)',
     'posX': '-85',
     'posY':'120',
-    'scale':'1'
+    'scale':'1',
+    'sign': 4
   },{
     'svg': Spock,
     'frameColor': 'hsl(189, 58%, 57%)',
     'shadowColor':'hsl(189, 59%, 53%)',
     'posX': '-120',
     'posY':'-30',
-    'scale':'1'
+    'scale':'1',
+    'sign': 5
   }
 ]
 

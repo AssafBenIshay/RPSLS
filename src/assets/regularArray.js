@@ -9,7 +9,9 @@ export const signs3 = [
       'shadowColor': 'hsl(349, 76%, 52%)',
       'posX': '0',
       'posY': '60',
-      'scale':'1.5'
+      'scale':'1.5',
+      'sign': 1
+      
       
     },
     {
@@ -18,7 +20,8 @@ export const signs3 = [
       'shadowColor': 'hsl(230, 99%, 62%)',
       'posX': '-80',
       'posY': '-80',
-      'scale':'1.5'
+      'scale':'1.5',
+      'sign': 2
 
     }, {
       'svg': Scissor,
@@ -26,7 +29,8 @@ export const signs3 = [
       'shadowColor': 'hsl(39, 94%, 39%)',
       'posX': '80',
       'posY': '-80',
-      'scale':'1.5'
+      'scale':'1.5',
+      'sign': 3
     }
   ]
 
