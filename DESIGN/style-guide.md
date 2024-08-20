@@ -8,6 +8,11 @@ The designs were created to the following widths:
 - Desktop: 1366px
 
 > 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
+## Recommended screen sizes for a responsive web app include1234:
+
+Desktop displays: 1280×720 to 1920×1080
+Tablet displays: 601×962 to 1280×800
+Mobile displays: 360×640 to 414×896
 
 ## Colors
 

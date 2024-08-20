@@ -141,7 +141,7 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     return (
         <div className='match'>
             <div className='match-titles'>
-                <p>YOR HAND</p>
+                <p>YOUR HAND</p>
                 <p>THE HOUSE PICKED</p> 
             </div>
             <div className='match-area'>

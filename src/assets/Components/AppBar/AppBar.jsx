@@ -16,7 +16,10 @@ export default function AppBar({ advancedGame, setAdvancedGame, setBoardType ,sc
     return (
         <div className='app-bar'>
             <div className='logo' onDoubleClick={()=>setAdvancedGame(!advancedGame)}>
-                <img src={advancedGame?bonusLogo:Logo} alt='Rock Paper Scissors'/>
+                <div className="tooltip">
+                    <img src={advancedGame ? bonusLogo : Logo} alt='Rock Paper Scissors' />
+                    <span className="tooltiptext"></span>
+                </div>
             </div>
             <div className='score-container'>
                 <div className='score-title'> SCORE</div>
