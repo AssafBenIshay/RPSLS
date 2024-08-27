@@ -7,7 +7,10 @@ import React from 'react'
 
 
 export default function AppBar({ advancedGame, setAdvancedGame, setBoardType ,score}) {
-    
+    React.useEffect(() => {
+        localStorage.setItem('score',score)
+
+    },[score])
 
     React.useEffect(() => {
         setBoardType(advancedGame ? AdvancedBoard : RegularBoard)

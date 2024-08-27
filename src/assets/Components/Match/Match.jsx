@@ -6,7 +6,7 @@ import { signs3 } from '../../regularArray'
 
 
 
-export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,setWinRing,setWinner}) {
+export default function Match({ selectedSign,advancedGame,score,setScore,setIsMatch,setWinRing,setWinner}) {
     const [onBoardSign, setOnBoardSign] = React.useState('')
     const [pcSign, setPcSign] = React.useState('')
     const [pcTurn, setPcTurn] = React.useState(false)
@@ -16,7 +16,8 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     React.useEffect(() => {
         setWinRing(false)
 
-    },[onBoardSign])
+    }, [onBoardSign])
+    
     React.useEffect(() => {
         for (let i = 0; i < 5; i++){
             if (signs5[i].sign === selectedSign) {
@@ -55,8 +56,8 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
     React.useEffect(() => {
         const first = () => checkWhoWon()
 
-    
         function checkWhoWon() {
+
             if (pcSign.svg) {
                 if (pcSign.sign === selectedSign) {
                     setIsIWinner('ITS A TIE!')
@@ -133,7 +134,10 @@ export default function Match({ selectedSign,advancedGame,setScore,setIsMatch,se
         
             }
         }
+
+
         first()
+
         
 },[turnEnded])
 

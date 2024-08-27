@@ -11,7 +11,7 @@ import DarkLayer from './assets/Components/Rules/DarkLayer.jsx'
 import Match from './assets/Components/Match/Match.jsx'
 
 function App() {
-  const [score,setScore] = React.useState(0)
+  const [score,setScore] = React.useState(Number(localStorage.getItem('score')))
   const [advancedGame, setAdvancedGame] = React.useState(true)
   const [BoardType,setBoardType] = React.useState(RegularBoard)
   const [signsArray, setSignsArray] = React.useState(signs5)
@@ -19,7 +19,8 @@ function App() {
   const [isMatch, setIsMatch] = React.useState(false)
   const [selectedSign, setSelectedSign] = React.useState('')
   const [winRing, setWinRing] = React.useState(false)
-  const [winner,setWinner] = React.useState('')
+  const [winner, setWinner] = React.useState('')
+  const [oldScore,setOldScore] = React.useState(0)
 
   React.useEffect(() => {
     if (!advancedGame) {
@@ -29,6 +30,12 @@ function App() {
       setSignsArray(signs5)
   }
   }, [advancedGame])
+
+  React.useEffect(() => {
+    if (!localStorage || localStorage.key(0)!=='score') {
+        localStorage.setItem('score',0)
+    }
+  },[])
   
   return (
     <div className='App'>
@@ -52,6 +59,7 @@ function App() {
         signsArray={signsArray}
         selectedSign={selectedSign}
         advancedGame={advancedGame}
+        score={score}
         setScore={setScore}
         setIsMatch={setIsMatch}
         setWinRing={setWinRing}
